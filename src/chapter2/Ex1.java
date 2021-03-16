@@ -2,18 +2,18 @@ package chapter2;
 
 public class Ex1 {
 	public static void main(String[] args) {
-		//문자
-		char value;
+		System.out.println(3 + 10);
 		
-		//정수
-		int number;
+		int result = 3 + 10;
+		System.out.println(result);
 		
-		//실수
-		double data;
+		int var1 = 3;
+		result = var1 + 10;
+		System.out.println(result);
 		
-		//논리
-		boolean val1;
-		
+		int var2 = 10;
+		result = var1 + var2;
+		System.out.println(result);
 	}
 
 }
