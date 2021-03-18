@@ -1,5 +1,7 @@
 package chapter2_1;
 
+import java.util.Arrays;
+
 public class Ex6 {
 	public static void main(String[] args) {
 		int[] korArr = new int[4];
@@ -20,7 +22,7 @@ public class Ex6 {
 		gradeArr[2] = 'C';
 		gradeArr[3] = 'B';
 		
-		System.out.println();
+		System.out.println(Arrays.toString(gradeArr)); //배열 확인
 	}
 
 }
