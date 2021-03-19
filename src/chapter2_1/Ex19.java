@@ -3,8 +3,8 @@ package chapter2_1;
 public class Ex19 {
 	Ex15 ex15 = new Ex15();
 	student chulsu = new student();
-	chulsu.name = "ÀÌÃ¶¼ö";
-	chulsu.age = 16;
+	//chulsu.name = "ÀÌÃ¶¼ö";
+	//chulsu.age = 16;
 	
 	student Student = new student();
 	
