@@ -19,10 +19,12 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand navbar-dark bg-dark">
+	<nav class="navbar navbar-fixed-top navbar-inverse">
 		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="./welcome.jsp">Home</a>
+			<div class="collapse navbar-collapse" id="navbar">
+				<ul class="nav navbar=nav">
+				<li class="active"><a class="navbar-brand" href="./welcome.jsp">Home</a></li>
+				</ul>
 			</div>
 		</div>
 	</nav>
