@@ -5,12 +5,15 @@
 
 	String welcomeClass = "";
 	String productsClass = "";
+	String addProductClass = "";
 	
 	if(active == null || active.equals("welcome")) {
 		welcomeClass = "class=\"active\"";
 	} else if(active.equals("products")) {
 		productsClass = "class=\"active\"";
-	} 
+	} else if(active.equals("addProduct")) {
+		addProductClass = "class=\"active\"";
+	}
 	
 %>
 
@@ -20,7 +23,7 @@
 				<ul class="nav navbar=nav">
 					<li <%=welcomeClass %>><a class="navbar-brand" href="./welcome.jsp?active=welcome">Home</a></li>
 					<li <%=productsClass %>><a class="navbar-brand" href="./products.jsp?active=products">상품 목록</a></li>
-					<li><a class="navbar-brand" href="#">메뉴 2</a></li>
+					<li <%=addProductClass %>><a class="navbar-brand" href="./addProduct.jsp?active=addProduct">상품 등록</a></li>
 					<li><a class="navbar-brand" href="#">메뉴 3</a></li>
 				</ul>
 			</div>

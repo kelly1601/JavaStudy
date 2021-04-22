@@ -11,6 +11,20 @@ public class ProductRepository {
 		listOfProducts = new ArrayList<Product>();
 	}
 	
+	// 클래스의 멤버 변수로 자기 자신을 가지고 있음
+	private static ProductRepository productRepository;
+	static {
+		productRepository = new ProductRepository();
+	}
+	
+	// 클래스 멤버 변수로 선언되어 있는 자기 자신(이 클래스의 인스턴스)을
+	// 반환하는 메서드
+	public static ProductRepository getInstance() {
+		return productRepository;
+	}
+	// 접근제어자가 private인 생성자의 의미?
+	// -> 클래스의 외부에서 인스턴스를 만들 수 없음
+	
 	public ProductRepository() {
 		Product phone = new Product("P1234", "iPhone6", 80000);
 		phone.setDescription("4.7-inch, 1334X750 Retina HD display, 8-megapixel iSight Camera");
