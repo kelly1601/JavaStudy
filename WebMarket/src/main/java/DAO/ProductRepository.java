@@ -11,33 +11,33 @@ public class ProductRepository {
 		listOfProducts = new ArrayList<Product>();
 	}
 	
-	// 클래스의 멤버 변수로 자기 자신을 가지고 있음
+	// �겢�옒�뒪�쓽 硫ㅻ쾭 蹂��닔濡� �옄湲� �옄�떊�쓣 媛뽮퀬 �엳�쓬
 	private static ProductRepository productRepository;
 	static {
 		productRepository = new ProductRepository();
 	}
 	
-	// 클래스 멤버 변수로 선언되어 있는 자기 자신(이 클래스의 인스턴스)을
-	// 반환하는 메서드
+	// �겢�옒�뒪 硫ㅻ쾭 蹂��닔濡� �꽑�뼵�릺�뼱�엳�뒗 �옄湲� �옄�떊(�씠 �겢�옒�뒪�쓽 �씤�뒪�꽩�뒪)�쓣
+	// 諛섑솚�븯�뒗 硫붿꽌�뱶
 	public static ProductRepository getInstance() {
 		return productRepository;
 	}
-	// 접근제어자가 private인 생성자의 의미?
-	// -> 클래스의 외부에서 인스턴스를 만들 수 없음
 	
-	public ProductRepository() {
-		Product phone = new Product("P1234", "iPhone6", 80000);
+	// �젒洹쇱젣�뼱�옄媛� private �씤 �깮�꽦�옄�쓽 �쓽誘�?
+	// �겢�옒�뒪�쓽 �쇅遺��뿉�꽌 �씤�뒪�꽩�뒪瑜� 留뚮뱾 �닔 �뾾�쓬
+	private ProductRepository() {
+		Product phone = new Product("P1234", "iPhone 6s", 800000);
 		phone.setDescription("4.7-inch, 1334X750 Retina HD display, 8-megapixel iSight Camera");
 		phone.setCategory("Smart Phone");
 		phone.setManufacturer("Apple");
 		phone.setUnitsInStock(1000);
 		phone.setCondition("New");
 		
-		Product notebook = new Product("P12345", "LG PC 그램", 1500000);
+		Product notebook = new Product("P1235", "LG PC 洹몃옩", 1500000);
 		notebook.setDescription("13.3-inch, IPS LED display, 5rd Generation Intel Core processor");
 		notebook.setCategory("Notebook");
 		notebook.setManufacturer("LG");
-		notebook.setUnitPrice(1000);
+		notebook.setUnitsInStock(1000);
 		notebook.setCondition("Refurbished");
 		
 		Product tablet = new Product("P1236", "Galaxy Tab 5", 900000);
@@ -58,9 +58,9 @@ public class ProductRepository {
 	
 	public Product getProduct(String productId) {
 		Product product = null;
-		
-		// 사용자가 원하는 상품의 상세 정보를 가져와서
-		// product 객체에 저장하는 코드
+
+		// �궗�슜�옄媛� �썝�븯�뒗 �긽�뭹�쓽 �긽�꽭 �젙蹂대�� 媛��졇���꽌
+		// product 媛앹껜�뿉 ���옣�븯�뒗 肄붾뱶
 		for(Product nthProduct : listOfProducts) {
 			String nthProductId = nthProduct.getProductId();
 			
@@ -72,4 +72,24 @@ public class ProductRepository {
 		
 		return product;
 	}
+	
+	// �긽�뭹 異붽�
+	public void addProduct(Product product) throws DuplicateProductException {
+		for(Product nthProduct : listOfProducts) {
+			String nthProductId = nthProduct.getProductId();
+			
+			if(nthProductId.equals(product.getProductId())) {
+				throw new DuplicateProductException(product.getProductId() + "가 중복되었음");
+			}
+		}
+		
+		listOfProducts.add(product);
+		return true;
+	}
 }
+
+
+
+
+
+

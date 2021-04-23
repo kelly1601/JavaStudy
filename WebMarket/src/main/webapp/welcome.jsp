@@ -1,8 +1,7 @@
 <%@page import="java.time.LocalDateTime"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%!
-	String greeting = "웹 쇼핑몰에 오신 것을 환영합니다";
+	String greeting = "웹 쇼핑몰에 오신것을 환영합니다";
 	String tagline = "Welcome to Web Market!";
 %>
 <%
@@ -11,8 +10,8 @@
 	int hour = nowDateTime.getHour();
 	int minute = nowDateTime.getMinute();
 	int second = nowDateTime.getSecond();
-
-	if(hour/12 == 0) {
+	
+	if(hour / 12 == 0) {
 		am_pm = "AM";
 	} else {
 		am_pm = "PM";
@@ -25,6 +24,7 @@
 	
 	String CT = s_hour + ":" + s_minute + ":" + s_second + " " + am_pm;
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,15 +44,15 @@
 	
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3"><%=greeting%></h1>
+			<h1 class="display-3"><%=greeting %></h1>
 		</div>
 	</div>
 	
-	<main role = "main">
+	<main role="main">
 		<div class="container">
 			<div class="text-center">
-				<h3><%=tagline%></h3>
-				<%= "<p>현재 접속 시각 " + CT + "</p>" %>
+				<h3><%=tagline %></h3>
+				<%="<p>현재 접속 시각 " + CT + "</p>"%>
 			</div>
 		</div>
 	</main>
@@ -60,3 +60,7 @@
 	<%@ include file="footer.jsp" %>
 </body>
 </html>
+
+
+
+

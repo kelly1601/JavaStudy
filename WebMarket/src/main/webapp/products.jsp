@@ -1,11 +1,11 @@
+<%@page import="DAO.ProductRepository"%>
 <%@page import="DTO.Product"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:useBean id="productDAO" class="DAO.ProductRepository" scope="session"></jsp:useBean>
 <%
-	List<Product> listOfProducts = productDAO.getAllProducts();
+	ProductRepository pr = ProductRepository.getInstance();
+	List<Product> listOfProducts = pr.getAllProducts();
 %>
-
 
 <!DOCTYPE html>
 <html>
@@ -32,7 +32,7 @@
 	
 	<div class="container">
 		<div class="row" align="center">
-			<!-- 상품 하나씩 보여 줌 -->
+			<!-- 상품을 하나씩 보여줌 -->
 			<%
 				for(int i=0; i<listOfProducts.size(); i++) {
 					Product product = listOfProducts.get(i);
@@ -41,12 +41,11 @@
 					<h3><%=product.getName() %></h3>
 					<p><%=product.getDescription() %></p>
 					<p><%=product.getUnitPrice() %></p>
-					<p><a href="./product.jsp?productId=><%=product.getProductId() %>" class="btn btn-secondary" role="button">상세 정보&raquo;</a></p>
+					<p><a href="./product.jsp?productId=<%=product.getProductId()%>" class="btn btn-secondary" role="button">상세 정보&raquo;</a></p>
 				</div>
 			<%
 				}
 			%>
-			
 		</div>
 		
 		<hr>
@@ -55,3 +54,9 @@
 	<%@ include file="footer.jsp" %>
 </body>
 </html>
+
+
+
+
+
+
