@@ -5,14 +5,15 @@ import java.io.Serializable;
 public class Product implements Serializable {
 	private static final long serialVersionUID = -8943425380512267111L;
 
-	private String productId; // 상품 아이디
-	private String name; // 상품명
-	private int unitPrice; // 상품 가격
-	private String description; // 상품 설명
-	private String manufacturer; // 제조사
-	private String category; // 분류
-	private long unitsInStock; // 재고 수
-	private String condition; // 신상품 or 중고품 or 재생품
+	private String productId; // �긽�뭹 �븘�씠�뵒
+	private String name; // �긽�뭹紐�
+	private int unitPrice; // �긽�뭹 媛�寃�
+	private String description; // �긽�뭹 �꽕紐�
+	private String manufacturer; // �젣議곗궗
+	private String category; // 遺꾨쪟
+	private long unitsInStock; // �옱怨� �닔
+	private String condition; // �떊�긽�뭹 or 以묎퀬�뭹 or �옱�깮�뭹
+	private String imagepath; // 이미지 파일 경로
 	
 	public Product(String productId, String name, int unitPrice) {
 		setProductId(productId);
